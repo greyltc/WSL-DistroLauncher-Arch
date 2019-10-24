@@ -1,4 +1,4 @@
-# Arch Lunix on WSL2
+# Arch Linux on WSL2
 Unofficial packaging of Arch Linux to run in the Windows Subsystem for Linux
 # WSL Distro Launcher Reference Implementation
 ## Introduction 
