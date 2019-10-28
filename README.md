@@ -1,5 +1,8 @@
 # Arch Linux on WSL2
 Unofficial packaging of Arch Linux to run in the Windows Subsystem for Linux
+Usage: open the top level `.sln` file with Visual Studio, right click the master project and choose Deploy. greylinux is now in your start menu.
+
+
 # WSL Distro Launcher Reference Implementation
 ## Introduction 
 This is the C++ reference implementation for a Windows Subsystem for Linux (WSL) distribution installer/launcher application. Every distro package must include a launcher app, which is responsible for completing installation & registration of your distro with WSL, and for launching new distro instances atop WSL.
