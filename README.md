@@ -1,6 +1,6 @@
 # Arch Linux on WSL2
-Unofficial packaging of Arch Linux to run in the Windows Subsystem for Linux
-Usage: open the top level `.sln` file with Visual Studio, right click the master project and choose Deploy. greylinux is now in your start menu.
+Unofficial packaging of Arch Linux to run in the Windows Subsystem for Linux  
+Usage: open the top level `.sln` file with Visual Studio, right click the master project and choose Deploy. greylinux is now in your start menu. Run it. The user creation routine will fail. If you run again you'll be root. Then run `setup-arch-docker-container`
 
 
 # WSL Distro Launcher Reference Implementation
