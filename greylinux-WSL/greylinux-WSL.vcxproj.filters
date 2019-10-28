@@ -147,15 +147,16 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <AppxManifest Include="MyDistro.appxmanifest" />
+    <AppxManifest Include="greylinux-WSL.appxmanifest" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\x64\install.tar.gz" />
-    <None Include="DistroLauncher-Appx_TemporaryKey.pfx" />
     <None Include="Package.StoreAssociation.xml" />
-    <None Include="DistroLauncher-Appx_StoreKey.pfx" />
+    <None Include="greylinux-WSL_StoreKey.pfx" />
+    <None Include="greylinux-WSL_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="$(targetname)" />
     <CustomBuild Include="$(targetname)" />
     <CustomBuild Include="$(targetname)" />
   </ItemGroup>
