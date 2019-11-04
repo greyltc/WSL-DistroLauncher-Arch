@@ -14,10 +14,11 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
     HRESULT hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
     if ((FAILED(hr)) || (exitCode != 0)) {
         return false;
+        return false;
     }
 
     // Add the user account to any relevant groups.
-    commandLine = L"/usr/sbin/usermod -aG adm,wheel,uucp,systemd-journal,sys,rfkill,log ";
+    commandLine = L"/usr/sbin/usermod -aG builders,adm,wheel,uucp,systemd-journal,sys,rfkill,log ";
     commandLine += userName;
     hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
     if ((FAILED(hr)) || (exitCode != 0)) {
