@@ -36,6 +36,35 @@ HRESULT InstallDistribution(bool createUser)
         return hr;
     }
 
+	// do wsl native setup tasks
+	//hr = g_wslApi.WslLaunchInteractive(L"/usr/bin/wsl-native-setup", true, &exitCode);
+	//if (FAILED(hr)) {
+	//	return hr;
+	//}
+
+	// update dowload mirrors
+	hr = g_wslApi.WslLaunchInteractive(L"/usr/bin/reflect-mirrors", true, &exitCode);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
+	// re-init and re-populate keys
+	hr = g_wslApi.WslLaunchInteractive(L"/bin/bash -c 'pacman-key --init'", true, &exitCode);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
+	hr = g_wslApi.WslLaunchInteractive(L"/bin/bash -c 'pacman-key --populate archlinux'", true, &exitCode);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
+	// update all the packages
+	hr = g_wslApi.WslLaunchInteractive(L"/bin/bash -c 'pacman -Syyu --noconfirm'", true, &exitCode);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
     // Create a user account.
     if (createUser) {
         Helpers::PrintMessage(MSG_CREATE_USER_PROMPT);
